@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: rgb(var(--primary));
+    color: var(--primary);
 }
 
 .notCurrentNavigation {
@@ -11,4 +11,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.notCurrentNavigation:hover {
+    color: var(--text-h);
 }
