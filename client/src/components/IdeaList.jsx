@@ -4,6 +4,7 @@ import Button from "./ui/Button"
 import Badge from "./ui/Badge"
 import { useState, useEffect } from "react"
 import axios from "axios"
+import { Link } from "react-router"
 
 const IdeaList = () => {
 
@@ -33,7 +34,7 @@ const IdeaList = () => {
               </div>
               <div className="flex gap-4">
                 <Button icon={Trash2} variant="error" />
-                <Button icon={Play} variant="primary" />
+                <Button as={Link} to={`/project/${idea.id}`} icon={Play} variant="primary" />
               </div>
             </div>
           ))

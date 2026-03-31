@@ -9,15 +9,14 @@ const variants = {
   outline: ""
 }
 
-const Button = ({icon: Icon, type = "button", content = "", variant, className, ...props}) => {
+const Button = ({icon: Icon, as: Component = "button", content = "", variant, className, ...props}) => {
   return (
-    <button 
-        type={type}
+    <Component 
         className={cn("flex justify-center items-center font-mono gap-2 rounded-2xl p-3 cursor-pointer", variants[variant], className)} 
         {...props}>
       { Icon && <Icon size={18} />}
       { content !== "" && <span>{content}</span>}
-    </button>
+    </Component>
   )
 }
 
