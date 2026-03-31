@@ -18,7 +18,7 @@ var app = builder.Build();
 app.UseCors(x => 
 	x.AllowAnyHeader() // Autorise tous les headers HTTP
 	.AllowAnyMethod()  // Autorise toutes les méthodes HTTP (GET, POST, PUT, DELETE…)
-	.WithOrigins("https://localhost:7089") // Autorise seulement ces origines
+	.WithOrigins("http://localhost:5173", "https://localhost:5173") // Autorise seulement ces origines
 );
 
 app.MapControllers();
