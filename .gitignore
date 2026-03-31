@@ -484,3 +484,5 @@ $RECYCLE.BIN/
 *.swp
 API/appsettings.json
 API/tairou.db
+API/tairou.db-shm
+API/tairou.db-wal
