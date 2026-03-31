@@ -18,7 +18,7 @@ public class IdeasController(AppDbContext context, IMediator mediator) : BaseAPI
     [HttpGet("{id}")]
     public async Task<ActionResult<Idea>> GetIdea(string id)
     {
-        return await context.Ideas.FindAsync(id) ?? throw new Exception("Idea not found.");
+        return await mediator.Send(new GetIdeaDetails.Query{ Id = id });
     }
 
     [HttpPost]
