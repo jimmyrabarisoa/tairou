@@ -1,0 +1,18 @@
+.currentNavigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary);
+}
+
+.notCurrentNavigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.notCurrentNavigation:hover {
+    color: var(--text-h);
+}

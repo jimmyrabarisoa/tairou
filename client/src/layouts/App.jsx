@@ -1,3 +1,5 @@
+import Navbar from "../components/Navbar"
+import { Outlet } from "react-router"
 
 function App() {
 
@@ -7,7 +9,7 @@ function App() {
       <div className="flex-1">
         <Outlet />  
       </div>   
-      {/* <Navbar /> */}
+      <Navbar />
     </div>
   )
 }

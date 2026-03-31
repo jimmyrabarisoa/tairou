@@ -1,0 +1,70 @@
+/* Importer 2 polices de caratères de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200..900&family=Source+Code+Pro:wght@200..900&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --primary: #6466f2;
+  --secondary: #65758B;
+  --success: #10B77F;
+  --warning: #F59F0A;
+  --error: #EE4343;
+  --text: #6b6375;
+  --border: #e5e4e7;
+  --text-h: #08060d;
+  --bg-body: #E8EBFA;
+  --sans: 'Source Sans 3', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: 'Source Sans 3', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: 'Source Code Pro', ui-monospace, Consolas, monospace;
+
+  /* --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5); */
+  
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+/* permet de faire font-sans/font-mono ou bg-background/text-foreground dans className */
+@theme inline {
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --font-sans: var(--sans);
+  --font-heading: var(--heading);
+  --font-mono: var(--mono);
+}
+
+@layer utilities {
+  .container {
+    @apply gap-1 bg-white border border-border shadow-xs p-4 rounded-2xl;
+  }
+}
+
+body {
+  background-color: var(--bg-body);
+  font-family: var(--sans);
+  color: var(--text);
+  margin-bottom: 70px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading);
+}
+
+input {
+  font-family: var(--mono);
+}
