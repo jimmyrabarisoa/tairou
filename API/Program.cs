@@ -1,3 +1,4 @@
+using Application.Ideas.Queries;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 
@@ -10,7 +11,12 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
    opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")); 
 });
 builder.Services.AddCors(); // permet à l'application backend de gérer des requêtes provenant de différents domaines (origins).
-// Sans ça, le backend refuserait par défaut les requêtes provenant d’un autre domaine ou port que lui-même (par exemple, le frontend React qui tourne sur localhost:3000).
+// Sans ça, le backend refuserait par défaut les requêtes provenant d’un autre domaine ou port que lui-même 
+// (par exemple, le frontend React qui tourne sur localhost:3000).
+
+builder.Services.AddMediatR(cfg => 
+	cfg.RegisterServicesFromAssemblyContaining<GetIdeaList.Handler>()
+);
 
 var app = builder.Build();
 

@@ -12,7 +12,8 @@ const IdeaList = () => {
 
   useEffect(() => {
     axios.get("https://localhost:7089/api/ideas")
-    .then(res => setIdeas(res.data))
+    .then(res => setIdeas(res.data)) // Par défaut, .NET sérialise le JSON en camelCase (minuscule au début) 
+    // du coup même si la classe C# contient des propriété comme Id, Title ..., elles deviennent ici idea.id, idea.title ...
     .finally(() => setIsLoading(false))
   }, [])
 
